@@ -1,0 +1,54 @@
+/* Center the quiz box in the middle of the page */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #ffe6f2; /* Soft pink background */
+    color: #5a1a1a; /* Dark red text */
+    padding: 20px;
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+/* Make sure only one container is visible at a time */
+#quiz-container, #result {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: absolute;
+}
+
+/* Hide the result box by default */
+#result {
+    display: none; /* Ensures it does not appear at the start */
+}
+
+/* Center content inside */
+#quiz-container, #result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style buttons */
+button {
+    background-color: #ff4d79;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #d93c64;
+}
