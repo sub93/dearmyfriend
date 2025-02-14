@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Letter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            color: #d63384;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hidden {
+            display: none;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        input {
+            border: 2px solid #d63384;
+        }
+        button {
+            background-color: #d63384;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b0256c;
+        }
+        #letter-img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Secret message!💌</h1>
+        <p>To unlock the message, please, enter the password:</p>
+        <input type="text" id="password" placeholder="Enter password...(eng)">
+        <button onclick="checkPassword()">Submit</button>
+        <button onclick="showHint()">Need a hint?</button>
+        <p id="letter" class="hidden">З днем святого валентина, my dear ❤️</p>
+        <img id="letter-img" class="hidden" src="letter1.jpg" alt="Handwritten Letter">
+    </div>
+    <script>
+        const correctPassword = "glintwein"; // Correct password in lowercase
+        const hints = [
+            "You use it to warm up someone you love.ᐟ",
+            "Specifically someone with a hole in their stomach and a violet fur coat.ᐟ",
+            "It's a drink you prepare yourself.ᐟ"
+        ];
+        let hintIndex = 0;
+
+        function checkPassword() {
+            const input = document.getElementById("password").value.toLowerCase(); // Convert input to lowercase
+            if (input === correctPassword) {
+                document.getElementById("letter").classList.remove("hidden");
+                document.getElementById("letter-img").classList.remove("hidden");
+            } else {
+                alert("Oops! Try again.");
+            }
+        }
+
+        function showHint() {
+            if (hintIndex < hints.length) {
+                alert(hints[hintIndex]);
+                hintIndex++;
+            } else {
+                alert("No more hints! You got this!");
+            }
+        }
+    </script>
+</body>
+</html>
